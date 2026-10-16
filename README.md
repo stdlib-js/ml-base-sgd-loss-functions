@@ -45,32 +45,20 @@ limitations under the License.
 
 <!-- Package usage documentation. -->
 
-<section class="installation">
 
-## Installation
-
-```bash
-npm install @stdlib/ml-base-sgd-loss-functions
-```
-
-Alternatively,
-
--   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
--   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
--   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
-
-The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
-
-To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
-
-</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-var lossFunctions = require( '@stdlib/ml-base-sgd-loss-functions' );
+import lossFunctions from 'https://cdn.jsdelivr.net/gh/stdlib-js/ml-base-sgd-loss-functions@esm/index.mjs';
+```
+
+You can also import the following named exports from the package:
+
+```javascript
+import { enum } from 'https://cdn.jsdelivr.net/gh/stdlib-js/ml-base-sgd-loss-functions@esm/index.mjs';
 ```
 
 #### lossFunctions()
@@ -114,9 +102,14 @@ The output array contains the following loss functions:
 
 <!-- eslint no-undef: "error" -->
 
-```javascript
-var contains = require( '@stdlib/array-base-assert-contains' ).factory;
-var lossFunctions = require( '@stdlib/ml-base-sgd-loss-functions' );
+```html
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script type="module">
+
+var contains = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-assert-contains' ).factory;
+import lossFunctions from 'https://cdn.jsdelivr.net/gh/stdlib-js/ml-base-sgd-loss-functions@esm/index.mjs';
 
 var isLossFunction = contains( lossFunctions() );
 
@@ -128,6 +121,10 @@ bool = isLossFunction( 'log' );
 
 bool = isLossFunction( 'beep' );
 // returns false
+
+</script>
+</body>
+</html>
 ```
 
 </section>
@@ -136,77 +133,7 @@ bool = isLossFunction( 'beep' );
 
 <!-- C interface documentation. -->
 
-* * *
 
-<section class="c">
-
-## C APIs
-
-<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
-
-<section class="intro">
-
-</section>
-
-<!-- /.intro -->
-
-<!-- C usage documentation. -->
-
-<section class="usage">
-
-### Usage
-
-```c
-#include "stdlib/ml/base/sgd/loss_functions.h"
-```
-
-#### STDLIB_ML_SGD_LOSS_FUNCTION
-
-An enumeration of SGD loss functions with the following fields:
-
--   **STDLIB_ML_SGD_EPSILON_INSENSITIVE**: penalty is the absolute value of the error whenever the absolute error exceeds epsilon and zero otherwise.
--   **STDLIB_ML_SGD_HINGE**: corresponds to a soft-margin linear Support Vector Machine (SVM), which can handle non-linearly separable data.
--   **STDLIB_ML_SGD_HUBER**: squared-error loss for observations with error smaller than epsilon in magnitude, linear loss otherwise.
--   **STDLIB_ML_SGD_LOG**: corresponds to Logistic Regression.
--   **STDLIB_ML_SGD_MODIFIED_HUBER**: Huber loss function variant for classification.
--   **STDLIB_ML_SGD_PERCEPTRON**: corresponds to the original perceptron by Rosenblatt (1957).
--   **STDLIB_ML_SGD_SQUARED_EPSILON_INSENSITIVE**: squared epsilon insensitive loss function.
--   **STDLIB_ML_SGD_SQUARED_ERROR**: squared difference of the observed and fitted values.
--   **STDLIB_ML_SGD_SQUARED_HINGE**: squared hinge loss function SVM (L2-SVM).
-
-```c
-#include "stdlib/ml/base/sgd/loss_functions.h"
-
-const enum STDLIB_ML_SGD_LOSS_FUNCTION v = STDLIB_ML_SGD_HINGE;
-```
-
-</section>
-
-<!-- /.usage -->
-
-<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
-
-<section class="notes">
-
-### Notes
-
--   Enumeration constants should be considered opaque values, and one should **not** rely on specific integer values.
-
-</section>
-
-<!-- /.notes -->
-
-<!-- C API usage examples. -->
-
-<section class="examples">
-
-</section>
-
-<!-- /.examples -->
-
-</section>
-
-<!-- /.c -->
 
 <!-- Section to include cited references. If references are included, add a horizontal rule *before* the section. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
 
@@ -233,7 +160,7 @@ const enum STDLIB_ML_SGD_LOSS_FUNCTION v = STDLIB_ML_SGD_HINGE;
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
